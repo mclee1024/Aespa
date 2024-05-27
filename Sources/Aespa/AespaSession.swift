@@ -345,7 +345,7 @@ extension AespaSession: PhotoContext {
     }
 }
 
-extension AespaSession {
+public extension AespaSession {
     func startSession(_ onComplete: @escaping CompletionHandler) {
         do {
             try coreSession.start()
