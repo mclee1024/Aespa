@@ -40,7 +40,7 @@ open class AespaSession {
     /// - Note: If you're looking for a `View` for `SwiftUI`, use `preview`
     public let previewLayer: AVCaptureVideoPreviewLayer
     
-    convenience init(option: AespaOption) {
+    public convenience init(option: AespaOption) {
         let session = AespaCoreSession(option: option)
         let eventManager = AespaEventManager()
 
