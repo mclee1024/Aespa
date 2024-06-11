@@ -350,6 +350,7 @@ public extension AespaSession {
         do {
             try coreSession.start()
             previewLayerSubject.send(previewLayer)
+            onComplete(.success(()))
         } catch let error {
             onComplete(.failure(error))
         }
