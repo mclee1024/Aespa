@@ -163,11 +163,12 @@ private extension InteractivePreview {
         }
         
         let maxZoomFactor = session.maxZoomFactor ?? 1.0
+        let minZoomFactor = session.minZoomFactor ?? 1.0
         return MagnificationGesture()
             .onChanged { (scale) in
                 let videoZoomFactor = scale * previousZoomFactor
                 if (videoZoomFactor <= maxZoomFactor) {
-                    let newZoomFactor = max(1.0, min(videoZoomFactor, maxZoomFactor))
+                    let newZoomFactor = max(minZoomFactor, min(videoZoomFactor, maxZoomFactor))
                     session.common(.zoom(factor: newZoomFactor))
                 }
             }

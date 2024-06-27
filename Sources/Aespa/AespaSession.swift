@@ -112,7 +112,13 @@ open class AespaSession {
     /// This property provides the maximum zoom factor supported by the active video device format.
     public var maxZoomFactor: CGFloat? {
         guard let videoDeviceInput = coreSession.videoDeviceInput else { return nil }
-        return videoDeviceInput.device.activeFormat.videoMaxZoomFactor
+        return videoDeviceInput.device.maxAvailableVideoZoomFactor
+    }
+
+    /// This property provides the minimum zoom factor supported by the active video device format.
+    public var minZoomFactor: CGFloat? {
+        guard let videoDeviceInput = coreSession.videoDeviceInput else { return nil }
+        return videoDeviceInput.device.minAvailableVideoZoomFactor
     }
 
     /// This property reflects the current zoom factor applied to the video device.
